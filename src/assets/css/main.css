@@ -1,0 +1,281 @@
+@import "uikit/uikit.css";
+@import "slick.css";
+@import "slick-theme.css";
+@import "reset.css";
+
+
+/************************* Fonts *************************/
+/* + font-family: "RobotoRegular"; */
+@font-face {
+    font-family: "RobotoRegular";
+    src: url("../fonts/RobotoRegular/RobotoRegular.eot");
+    src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"),
+    url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* + font-family: "RobotoLight"; */
+@font-face {
+    font-family: "RobotoLight";
+    src: url("../fonts/RobotoLight/RobotoLight.eot");
+    src: url("../fonts/RobotoLight/RobotoLight.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoLight/RobotoLight.woff") format("woff"),
+    url("../fonts/RobotoLight/RobotoLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoMedium"; */
+@font-face {
+    font-family: "RobotoMedium";
+    src: url("../fonts/RobotoMedium/RobotoMedium.eot");
+    src: url("../fonts/RobotoMedium/RobotoMedium.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoMedium/RobotoMedium.woff") format("woff"),
+    url("../fonts/RobotoMedium/RobotoMedium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoBold"; */
+@font-face {
+    font-family: "RobotoBold";
+    src: url("../fonts/RobotoBold/RobotoBold.eot");
+    src: url("../fonts/RobotoBold/RobotoBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoBold/RobotoBold.woff") format("woff"),
+    url("../fonts/RobotoBold/RobotoBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoSlabRegular"; */
+@font-face {
+    font-family: "RobotoSlabRegular";
+    src: url("../fonts/RobotoSlabRegular/RobotoSlabRegular.eot");
+    src: url("../fonts/RobotoSlabRegular/RobotoSlabRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoSlabRegular/RobotoSlabRegular.woff") format("woff"),
+    url("../fonts/RobotoSlabRegular/RobotoSlabRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoSlabLight"; */
+@font-face {
+    font-family: "RobotoSlabLight";
+    src: url("../fonts/RobotoSlabLight/RobotoSlabLight.eot");
+    src: url("../fonts/RobotoSlabLight/RobotoSlabLight.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoSlabLight/RobotoSlabLight.woff") format("woff"),
+    url("../fonts/RobotoSlabLight/RobotoSlabLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "RobotoSlabBold"; */
+@font-face {
+    font-family: "RobotoSlabBold";
+    src: url("../fonts/RobotoSlabBold/RobotoSlabBold.eot");
+    src: url("../fonts/RobotoSlabBold/RobotoSlabBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/RobotoSlabBold/RobotoSlabBold.woff") format("woff"),
+    url("../fonts/RobotoSlabBold/RobotoSlabBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/************************* Общие стили *************************/
+html,
+body {
+    height: 100%;
+    font-size: 16px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    outline: none;
+}
+
+.basic_width {
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    flex: 1 0 auto;
+}
+
+.footer{
+    flex: 0 0 auto;
+    height: 280px;
+    background: url("../images/footer_bg.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.clearfix_:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/************************* header *************************/
+.header {
+    height: 200px;
+    background: url("../images/header_bg.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.header-index {
+    height: 200px;
+    background: url("../images/header-index.jpg") 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.header-top {
+    height: 50px;
+    background-color: rgba(0,0,0, 0.7);
+}
+
+.header-top__nav {
+    font-family: RobotoLight, sans-serif;
+    font-size: .875rem;
+}
+
+.header-top__nav-el {
+    float: left;
+    padding: 18px 0;
+    margin-right: 27px;
+}
+
+.header-top__nav-el a {
+    color: #d5d5d5;
+    border-bottom: 1px solid #424548;
+    text-decoration: none;
+}
+
+/* переключение языка */
+.dropbtn-lang {
+    padding: 5px 14px;
+    cursor: pointer;
+}
+
+.dropdown-lang {
+    position: relative;
+    display: inline-block;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    /*width: 160px;*/
+    width: 123px;
+    float: right;
+}
+
+.dropdown-lang-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.3);
+    margin-top: 13px;
+    /*width: 160px;*/
+    width: 123px;
+}
+
+.dropbtn-lang, .dropdown-lang-content a {
+    padding-left: 45px;
+    font-family: RobotoRegular, sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+
+.dropbtn-lang[data-lang="ru"], a[data-lang="ru"] {
+    background: url('../images/lang/ru.png') no-repeat 10px center;
+}
+
+.dropbtn-lang[data-lang="eng"], a[data-lang="eng"] {
+    background: url('../images/lang/eng.png') no-repeat 10px center;
+}
+
+.dropbtn-lang[data-lang="ger"], a[data-lang="ger"] {
+    background: url('../images/lang/ger.png') no-repeat 10px center;
+}
+
+.dropbtn-lang[data-lang="sp"], a[data-lang="sp"] {
+    background: url('../images/lang/sp.png') no-repeat 10px center;
+}
+
+.dropbtn-lang::after {
+    background: rgba(0, 0, 0, 0) url("../images/dropdown-arrow.png") no-repeat center center;
+    content: "";
+    height: 4px;
+    position: absolute;
+    right: 10px;
+    top: 24px;
+    width: 8px;
+}
+
+.dropdown-lang-content a {
+    display: block;
+    text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.dropdown-lang-content a:hover, .dropdown-lang:hover {
+    background-color: #000;
+}
+
+.dropdown-lang:hover .dropdown-lang-content {
+    display: block;
+}
+
+/*social*/
+.social-top {
+    display: inline-block;
+    float: right;
+    margin-right: 27px;
+    padding: 13px 0;
+}
+
+.social-top__item {
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.social-top__item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.social-top__item.youtube {
+    background-image: url("../images/social/social-youtube.png");
+}
+
+.social-top__item.youtube:hover {
+    background-image: url("../images/social/social-youtube-hover.png");
+}
+
+.social-top__item.le {
+    background-image: url("../images/social/social-le.png");
+}
+
+.social-top__item.le:hover  {
+    background-image: url("../images/social/social-le-hover.png");
+}
+
+.social-top__item.hz {
+    background-image: url("../images/social/social-hz.png");
+}
+
+.social-top__item.hz:hover  {
+    background-image: url("../images/social/social-hz-hover.png");
+}
+
+
+
