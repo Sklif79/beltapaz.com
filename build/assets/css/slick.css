@@ -94,6 +94,7 @@
 }
 .slick-initialized .slick-slide
 {
+    outline: none;
     display: block;
 }
 .slick-loading .slick-slide
