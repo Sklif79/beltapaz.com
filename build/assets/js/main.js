@@ -22,6 +22,18 @@ $(document).ready(function(){
         prevArrow: '<div class="slider-prev"></div>',
         arrows: true
     });
+
+    $('.slider-news').slick({
+        infinite: true,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        dots: false,
+        nextArrow: '<div class="slider-next"></div>',
+        prevArrow: '<div class="slider-prev"></div>',
+        arrows: true
+    });
+
+
 });
 
 
