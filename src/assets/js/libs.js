@@ -2,3 +2,4 @@
 //= libs/slick.min.js
 //= libs/uikit/uikit.js
 //= libs/uikit/components/lightbox.js
+//= libs/jquery-ui.min.js

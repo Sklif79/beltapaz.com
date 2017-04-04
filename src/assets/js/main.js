@@ -1,6 +1,8 @@
 $(document).ready(function(){
     mapFooter();
 
+    doubleRange();
+
     //sliders
     $('.promo-slider').slick({
         infinite: true,
@@ -32,6 +34,10 @@ $(document).ready(function(){
         prevArrow: '<div class="slider-prev"></div>',
         arrows: true
     });
+
+
+
+
 
 
 });
@@ -67,5 +73,22 @@ function mapFooter() {
 
         myMap.geoObjects.add(myPlacemark);
     });
+}
 
+
+//двойной ползунок
+function doubleRange() {
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 80,
+        max: 500,
+        values: [ 120, 400 ],
+        slide: function( event, ui ) {
+            $( "#range-min" ).val( ui.values[ 0 ] );
+            $( "#range-max" ).val(  ui.values[ 1 ] );
+        }
+    });
+
+    $( "#range-min" ).val( $( "#slider-range" ).slider( "values", 0 ));
+    $( "#range-max" ).val( $( "#slider-range" ).slider( "values", 1 ));
 }

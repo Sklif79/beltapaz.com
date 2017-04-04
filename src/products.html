@@ -1,10 +1,424 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+//= templates/header.html
+<div class="basic_width">
+    <h1 class="h1 title">Продукция</h1>
+</div>
+
+<div class="basic_width">
+    <div class="products-nav">
+        <div class="products-nav__item">
+            <a href="" class="products-nav__link">
+                <img src="assets/images/products-nav-1.jpg" alt="" class="products-nav__image">
+                <div class="products-nav__title">
+                    Токарные патроны<br>
+                    (с ручным зажимом)
+                </div>
+                <div class="products-nav__border"></div>
+            </a>
+        </div>
+
+        <div class="products-nav__item">
+            <a href="" class="products-nav__link">
+                <img src="assets/images/products-nav-2.jpg" alt="" class="products-nav__image">
+                <div class="products-nav__title">
+                    Токарные патроны<br>
+                    (с механизированным<br>
+                    зажимом)
+                </div>
+                <div class="products-nav__border"></div>
+            </a>
+        </div>
+
+        <div class="products-nav__item">
+            <a href="" class="products-nav__link">
+                <img src="assets/images/products-nav-3.jpg" alt="" class="products-nav__image">
+                <div class="products-nav__title">
+                    Специальные патроны
+                </div>
+                <div class="products-nav__border"></div>
+            </a>
+        </div>
+
+        <div class="products-nav__item">
+            <a href="" class="products-nav__link">
+                <img src="assets/images/products-nav-4.jpg" alt="" class="products-nav__image">
+                <div class="products-nav__title">
+                    Запчасти к патронам
+                </div>
+                <div class="products-nav__border"></div>
+            </a>
+        </div>
+
+        <div class="products-nav__item">
+            <a href="" class="products-nav__link">
+                <img src="assets/images/products-nav-5.jpg" alt="" class="products-nav__image">
+                <div class="products-nav__title">
+                    Комплектующие<br>
+                    к тракторам МТЗ
+                </div>
+                <div class="products-nav__border"></div>
+            </a>
+        </div>
+
+        <div class="products-nav__item">
+            <a href="" class="products-nav__link">
+                <img src="assets/images/products-nav-6.jpg" alt="" class="products-nav__image">
+                <div class="products-nav__title">
+                    Товары<br>
+                    народного<br>
+                    потребления
+                </div>
+                <div class="products-nav__border"></div>
+            </a>
+        </div>
+    </div><!--products-nav-->
+
+    <div class="flex-row main-content">
+        <aside class="aside">
+            <form action="" method="post">
+                <div class="clearfix_">
+                    <h4 class="aside__title first">Крепление</h4>
+                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                </div>
+                <div class="field__wrap">
+                    <input type="radio" name="mount" class="form__field" id="type1">
+                    <label class="field__label" for="type1">
+                        <span class="field__title">Тип 1 - </span>
+                        <span class="field__title-border">ГОСТ 3889-80</span>
+                    </label>
+                </div>
+                <div class="field__wrap">
+                    <div class="field__wrap">
+                        <input type="radio" name="mount" class="form__field" id="type1din">
+                        <label class="field__label" for="type1din">
+                            <span class="field__title">Тип 1 - </span>
+                            <span class="field__title-border">DIN 6350</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field__wrap">
+                    <input type="radio" name="mount" class="form__field" id="type2">
+                    <label class="field__label" for="type2">
+                        <span class="field__title">Тип 2 - </span>
+                        <span class="field__title-border">ГОСТ 12593-72 (DIN 55027)</span>
+                    </label>
+                </div>
+                <div class="field__wrap">
+                    <input type="radio" name="mount" class="form__field" id="type3">
+                    <label class="field__label" for="type3">
+                        <span class="field__title">Тип 3 - </span>
+                        <span class="field__title-border">ГОСТ 12595-85 (DIN 55026)</span>
+                    </label>
+                </div>
+                <div class="field__wrap">
+                    <input type="radio" name="mount" class="form__field" id="type4">
+                    <label class="field__label" for="type4">
+                        <span class="field__title">Тип 4 - </span>
+                        <span class="field__title-border">ГОСТ 26651-85 (DIN 55029 тип Кэмлокк)</span>
+                    </label>
+                </div>
+                <div class="clearfix_">
+                    <h4 class="aside__title">Исполнение</h4>
+                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                </div>
+                <div class="field__wrap">
+                    <input type="radio" name="fist" class="form__field" id="fist1">
+                    <label class="field__label" for="fist1">
+                        <span class="field__title">Кулачки исполнения 1 (цельные)</span>
+                    </label>
+                </div>
+                <div class="field__wrap">
+                    <input type="radio" name="fist" class="form__field" id="fist2">
+                    <label class="field__label" for="fist2">
+                        <span class="field__title">Кулачки исполнения 2 (цельные)</span>
+                    </label>
+                </div>
+                <div class="clearfix_">
+                    <h4 class="aside__title">Количество кулачков</h4>
+                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                </div>
+                <div class="field__wrap">
+                    <input type="checkbox" class="form__field" id="fist3">
+                    <label class="field__label-checkbox" for="fist3">
+                        <span class="field__title">3-х кулачковый</span>
+                    </label>
+                </div>
+                <div class="field__wrap">
+                    <input type="checkbox" class="form__field" id="fist4">
+                    <label class="field__label-checkbox" for="fist4">
+                        <span class="field__title">4-х кулачковый</span>
+                    </label>
+                </div>
+                <div class="field__wrap">
+                    <input type="checkbox" class="form__field" id="fist6">
+                    <label class="field__label-checkbox" for="fist6">
+                        <span class="field__title">6-ти кулачковый</span>
+                    </label>
+                </div>
+                <div class="clearfix_">
+                    <h4 class="aside__title">Диаметр патрона</h4>
+                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                </div>
+
+                <!-- ползунок -->
+                <!--http://jqueryui.com/slider/#range-->
+                <div class="range-wrap">
+                    <div class="clearfix_">
+                        <label class="range-min range"><input type="text" id="range-min"></label>
+                        <label class="range-max range"><input type="text" id="range-max"></label>
+                    </div>
+                    <div id="slider-range"></div>
+                    <div class="clearfix_ range-info">
+                        <div class="range-info__from">от 80 мм</div>
+                        <div class="range-info__to">до 500 мм</div>
+                    </div>
+
+                    <button type="submit" class="news-preview-block__btn">Подобрать</button>
+                </div>
+                <!--/-->
+
+            </form>
+        </aside>
+        <div class="content-with-aside">
+            <div class="catalog">
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (сборные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="catalog-item">
+                    <div class="catalog-item__image-wrap">
+                        <img src="assets/images/catalog.png" alt="">
+                        <a href="" class="catalog-item__image-link">
+                            <div class="catalog-item__image-hover">
+                                <div class="catalog-item__image-text">Подробнее</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-info">
+                        <div class="catalog-info__title">
+                            Патрон типа 1 - ГОСТ 3889-80
+                            Кулачки исполнения 1
+                            (цельные)
+                        </div>
+                        <div class="catalog-info__description">
+                            <ul>
+                                <li>Диаметр 125 мм</li>
+                                <li>3-х кулачковый</li>
+                            </ul>
+                        </div>
+                        <a class="catalog-info__read-more">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            //= templates/pagination.html
+        </div>
+    </div>
+
+</div>
+
+
+//= templates/footer.html
