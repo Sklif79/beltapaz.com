@@ -5,7 +5,9 @@ $(document).ready(function () {
 
     doubleRange();
 
-    if($('.services-images__el').length) {
+
+
+    if ($('.services-images__el').length) {
         $(window).on('resize', fix_size);
 
         fix_size('.el_1-3');
@@ -16,7 +18,6 @@ $(document).ready(function () {
 
     $("#card-image").tabs();
     $("#card-tabs").tabs();
-
 
 
     //sliders
@@ -30,7 +31,7 @@ $(document).ready(function () {
         prevArrow: '<div class="slider-prev"></div>',
         arrows: true,
         adaptiveHeight: true,
-        centerMode:true
+        centerMode: true
     });
 
     $('.slider-partners').slick({
@@ -144,9 +145,9 @@ function searchActive() {
 
 
     el.on('click', function () {
-        nav.hide().css('position','absolute');
+        nav.hide().css('position', 'absolute');
         el.parent().addClass('focus');
-        $('.header-bottom__search-el').attr('placeholder','Введите название товара...');
+        $('.header-bottom__search-el').attr('placeholder', 'Введите название товара...');
         $('.header-bottom__search-btn').val('Поиск')
         close.show();
     });
@@ -154,7 +155,7 @@ function searchActive() {
     close.on('click', function () {
         el.parent().removeClass('focus');
         nav.show(600);
-        $('.header-bottom__search-el').attr('placeholder','Поиск...');
+        $('.header-bottom__search-el').attr('placeholder', 'Поиск...');
         $('.header-bottom__search-btn').val('');
         close.hide();
     });

@@ -2077,8 +2077,57 @@ button:hover {
     margin-top: 23px;
 }
 
+/************************* dealers *************************/
+.dealers-map-wrap {
+    height: 450px;
+    overflow: hidden;
+}
 
+#dealers-map {
+    height: 500px;
+}
 
+.dealers-table-wrap {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.dealers-table, .dealers-table tr:first-child td {
+    font-family: RobotoRegular, serif;
+    font-size: 0.875rem;
+}
+
+.dealers-table td:first-child {
+    font-family: RobotoBold, serif;
+    font-size: 0.875rem;
+    width: 21.05%;
+}
+
+.dealers-table td {
+    border: 1px solid #edaa77;
+    padding: 20px;
+    text-align: center;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.dealers-table td:nth-of-type(2){
+    width: 17.54%;
+}
+
+.dealers-table td:nth-of-type(3){
+    width: 25.88%;
+}
+
+.dealers-table td:nth-of-type(4){
+    width: 19.74%;
+}
+
+.flash-wrap {
+    background-color: #ccc;
+    height: 400px;
+    margin-bottom: 50px;
+}
 
 
 
