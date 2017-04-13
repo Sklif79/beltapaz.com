@@ -5,7 +5,30 @@ $(document).ready(function () {
 
     doubleRange();
 
+    cropExpo();
 
+    faqSpoilar();
+
+    // $('.question').on('click', function () {
+    //     $(this).toggleClass('question__opened')
+    //         .parent().find('.question-answer')
+    //         .slideToggle(500);
+    // });
+
+
+
+
+    if ($('.expo-more-slider__img').length) {
+        $(window).on('resize', fix_size);
+
+        fix_size('.expo-more-slider__img');
+    }
+
+    if ($('.news-item__image').length) {
+        $(window).on('resize', fix_size);
+
+        fix_size('.news-item__image');
+    }
 
     if ($('.services-images__el').length) {
         $(window).on('resize', fix_size);
@@ -22,7 +45,6 @@ $(document).ready(function () {
 
     //sliders
     $('.promo-slider').slick({
-        // infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
@@ -51,6 +73,16 @@ $(document).ready(function () {
         dots: false,
         nextArrow: '<div class="slider-next"></div>',
         prevArrow: '<div class="slider-prev"></div>',
+        arrows: true
+    });
+
+    $('.expo-more-slider').slick({
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        nextArrow: '<div class="expo-more-slider-next"></div>',
+        prevArrow: '<div class="expo-more-slider-prev"></div>',
         arrows: true
     });
 
@@ -158,5 +190,36 @@ function searchActive() {
         $('.header-bottom__search-el').attr('placeholder', 'Поиск...');
         $('.header-bottom__search-btn').val('');
         close.hide();
+    });
+}
+
+function cropExpo () {
+    if ( $('.expo__item-news').length ) {
+
+        $('.expo__item-news').each( function () {
+            var size = 170,
+                newsContent= $(this),
+                newsText = newsContent.text();
+
+            if(newsText.length > size){
+                newsContent.text(newsText.slice(0, size) + ' ...');
+            }
+
+        });
+    }
+}
+
+function faqSpoilar() {
+    var panelItem = document.querySelectorAll('.question'),
+        active = document.getElementsByClassName('panel-active');
+
+    Array.from(panelItem).forEach(function(item, i, panelItem) {
+        item.addEventListener('click', function(e) {
+            if (active.length > 0 && active[0] !== this) // если есть активный элемент, и это не тот по которому кликнули
+                active[0].classList.remove('panel-active'); // убрать класс panel-active
+
+            // изменить состояние класса panel-active на текущем элементе: добавить если не было, убрать если было.
+            this.classList.toggle('panel-active');
+        });
     });
 }

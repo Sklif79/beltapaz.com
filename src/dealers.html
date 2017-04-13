@@ -1,0 +1,173 @@
+//= templates/header.html
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<div class="basic_width">
+    <h1 class="h1 title">Дилеры</h1>
+</div>
+
+<div class="basic_width">
+
+    <div class="dealers-map-wrap">
+        <div id="dealers-map"></div>
+    </div>
+
+    <div class="dealers-table-wrap">
+        <table class="dealers-table">
+            <tr>
+                <td>Наименование объекта ТПС</td>
+                <td>Страна</td>
+                <td>Телефоны</td>
+                <td>Электронная почта</td>
+                <td>Сайт</td>
+            </tr>
+            <tr>
+                <td>ООО «Феррум»
+                    г.Нижний Новгород</td>
+                <td>Россия</td>
+                <td>(8352) 24-22-73,
+                    <br>(8352) 24-25-05 (факс)</td>
+                <td>info@sto21.ru</td>
+                <td>frrm.fis.ru</td>
+            </tr>
+            <tr>
+                <td>ООО «РДА Групп» г.Москва</td>
+                <td>Россия</td>
+                <td>(495) 641-88-12,
+                    <br>(499) 641-33-08
+                    <br>495) 358-67-74 (факс)</td>
+                <td>rda_group@mail.ru</td>
+                <td>beltapaz-rus.ru</td>
+            </tr>
+            <tr>
+                <td>ООО «ТТК «Каммаркет» г.Набережные Челны</td>
+                <td>Россия</td>
+                <td>(8552) 39-73-45
+                    <br>факс: (8552) 39-73-45</td>
+                <td>inskam@list.ru</td>
+                <td>kammarket.ru</td>
+            </tr>
+            <tr>
+                <td>ООО «Корунд» г.Пенза</td>
+                <td>Россия</td>
+                <td>(8412) 49-60-10,
+                    <br>(8412) 49-60-10 (факс)</td>
+                <td>info@koround.ru</td>
+                <td>koround.ru</td>
+            </tr>
+            <tr>
+                <td>ООО «СнабИнструмент»
+                    г. Москва</td>
+                <td>Россия</td>
+                <td>(495) 785-02-06 (многоканальный)</td>
+                <td>info@snabinstrument.ru</td>
+                <td>snabinstrument.ru</td>
+            </tr>
+            <tr>
+                <td>ООО «Москит-2» г.Ростов-на-Дону</td>
+                <td>Россия</td>
+                <td>(863) 264-48-55
+                    <br>факс: (863) 264-48-55</td>
+                <td>info@moskit.info</td>
+                <td>moskit.info</td>
+            </tr>
+            <tr>
+                <td>ООО «ТД «Домен» г.Харьков</td>
+                <td>Украина</td>
+                <td>(057) 754-34-39
+                    <br>факс: (057) 754-38-49</td>
+                <td>domen2002@ukr.net</td>
+                <td>investstanok.ru</td>
+            </tr>
+            <tr>
+                <td>ООО "Инвест-Cтанко" г.Химки</td>
+                <td>Россия</td>
+                <td>(495) 638-57-25
+                    <br>факс: (495) 545-02-30</td>
+                <td>investstanok@yandex.ru</td>
+                <td>investstanok.ru</td>
+            </tr>
+            <tr>
+                <td>OOO «Псковский завод технологической оснастки»</td>
+                <td>Россия</td>
+                <td>(8112) 70-05-65
+                    <br>факс: (8112) 70-05-66
+                    <br>факс: (8112) 70-05-67</td>
+                <td>info@pzto.ru</td>
+                <td>pzto.ru</td>
+            </tr>
+            <tr>
+                <td>ТОО «Спектр 2000» г. Усть-Каменогорск</td>
+                <td>Казахстан</td>
+                <td>(7232) 75-92-41
+                    <br>факс: (7232) 76-64-55</td>
+                <td>spektr2000@list.ru</td>
+                <td>investstanok.ru</td>
+            </tr>
+            <tr>
+                <td>ALBIZ M, SRL г.Кишинёв</td>
+                <td>Молдова</td>
+                <td>+373 (22) 50-37-87
+                    <br>факс:+373 (22) 50-37-88
+                    <br>факс:+373 (22) 50-32-72</td>
+                <td>albiz_m@mail.ru</td>
+                <td>albiz.md</td>
+            </tr>
+            <tr>
+                <td>ООО «Промышленный инструмент»     г. Смоленск</td>
+                <td>Россия</td>
+                <td>+7(4812) 38-70-93
+                    <br>факс: +7(4812) 38-70-93</td>
+                <td>metal-fox@mail.ru</td>
+                <td>rezets-by.ru</td>
+            </tr>
+            <tr>
+                <td>ТОО "Алматы Инструмент"</td>
+                <td>Казахстан</td>
+                <td>(+727)384-82-86
+                    <br>факс: (+727)384-82-85</td>
+                <td>info@tools.kz</td>
+                <td>tools.kz</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="flash-wrap">
+
+    </div>
+</div>
+
+<script>
+    ymaps.ready(init);
+    function init() {
+        myMap = new ymaps.Map('dealers-map', {
+            center: [48.98920161841188,68.58697022782943],
+            zoom: 4,
+            controls: []
+//            behaviors: ['default', 'scrollZoom']
+        })
+            objectManager = new ymaps.ObjectManager({
+                // Чтобы метки начали кластеризоваться, выставляем опцию.
+                clusterize: true,
+                // ObjectManager принимает те же опции, что и кластеризатор.
+//                gridSize: 32
+            });
+
+        // Чтобы задать опции одиночным объектам и кластерам,
+        // обратимся к дочерним коллекциям ObjectManager.
+        objectManager.objects.options.set('preset', 'islands#redDotIcon');
+        objectManager.clusters.options.set('preset', 'islands#redClusterIcons');
+        myMap.geoObjects.add(objectManager);
+
+        $.ajax({
+            url: "/assets/js/data.json"
+        }).done(function(data) {
+            objectManager.add(data);
+        });
+
+        myMap.setBounds(myMap.geoObjects.getBounds());
+
+    }
+</script>
+
+//= templates/about.html
+
+//= templates/footer.html
