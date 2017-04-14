@@ -5,24 +5,21 @@ $(document).ready(function () {
 
     doubleRange();
 
-    cropExpo();
+    // cropExpo();
 
-    if ($('.services-images__el').length) {
-        $(window).on('resize', fix_size);
+    $(".expo__item-news").dotdotdot({
+        ellipsis: "",
+        tolerance: 1
+    });
 
-        fix_size('.el_1-3');
-        fix_size('.el_2-3');
-        fix_size('.el_3-3');
-        fix_size('.el_half');
-    }
+    faqSpoilar();
 
     $("#card-image").tabs();
     $("#card-tabs").tabs();
 
 
-    //sliders
+    //************************** sliders *********************************
     $('.promo-slider').slick({
-        // infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
@@ -51,6 +48,16 @@ $(document).ready(function () {
         dots: false,
         nextArrow: '<div class="slider-next"></div>',
         prevArrow: '<div class="slider-prev"></div>',
+        arrows: true
+    });
+
+    $('.expo-more-slider').slick({
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        nextArrow: '<div class="expo-more-slider-next"></div>',
+        prevArrow: '<div class="expo-more-slider-prev"></div>',
         arrows: true
     });
 
@@ -108,35 +115,6 @@ function doubleRange() {
 }
 
 
-//ресайз изображений под размер контейнера
-function fix_size(classParent) {
-    var images = $(classParent + ' img');
-    images.each(setsize);
-
-    function setsize() {
-        var img = $(this),
-            img_dom = img.get(0),
-            container = img.parents(classParent);
-        if (img_dom.complete) {
-            resize();
-        } else img.one('load', resize);
-
-        function resize() {
-            if ((container.width() / container.height()) > (img_dom.width / img_dom.height)) {
-                img.width('100%');
-                img.height('auto');
-            } else {
-                img.height('100%');
-                img.width('auto');
-            }
-            var marginx = (img.width() - container.width()) / -2,
-                marginy = (img.height() - container.height()) / -2;
-            img.css({'margin-left': marginx, 'margin-top': marginy});
-        }
-    }
-}
-
-
 function searchActive() {
     // var el = $('input.header-bottom__search-el');
     var el = $('input.header-bottom__search-el');
@@ -161,18 +139,33 @@ function searchActive() {
     });
 }
 
-function cropExpo () {
-    if ( $('.expo__item-news').length ) {
+// function cropExpo () {
+//     if ( $('.expo__item-news').length ) {
+//
+//         $('.expo__item-news').each( function () {
+//             var size = 170,
+//                 newsContent= $(this),
+//                 newsText = newsContent.text();
+//
+//             if(newsText.length > size){
+//                 newsContent.text(newsText.slice(0, size) + ' ...');
+//             }
+//
+//         });
+//     }
+// }
 
-        $('.expo__item-news').each( function () {
-            var size = 170,
-                newsContent= $(this),
-                newsText = newsContent.text();
+function faqSpoilar() {
+    var panelItem = document.querySelectorAll('.question'),
+        active = document.getElementsByClassName('panel-active');
 
-            if(newsText.length > size){
-                newsContent.text(newsText.slice(0, size) + ' ...');
-            }
+    Array.from(panelItem).forEach(function(item, i, panelItem) {
+        item.addEventListener('click', function(e) {
+            if (active.length > 0 && active[0] !== this) // если есть активный элемент, и это не тот по которому кликнули
+                active[0].classList.remove('panel-active'); // убрать класс panel-active
 
+            // изменить состояние класса panel-active на текущем элементе: добавить если не было, убрать если было.
+            this.classList.toggle('panel-active');
         });
-    }
+    });
 }
