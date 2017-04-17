@@ -7,16 +7,7 @@
 <div class="basic_width">
     <div class="expo-more">
         <div class="expo-more-wrap clearfix_">
-            <div class="expo-more-img">
-                <img src="assets/images/expo-more/expo-more.jpg" alt="">
-            </div>
-            <div class="expo-more-date-picker">
-                <div class="expo-more-date-picker__calendar"></div>
-                <div class="expo-more-date-picker__tips">
-                    <span class="expo-more-date-picker__tip green-dot">Выставки</span>
-                    <span class="expo-more-date-picker__tip brown-dot">Деловые встречи</span>
-                </div>
-            </div>
+            <img src="assets/images/expo-more/expo-more.jpg" alt="">
             <div class="expo-more-info">
                 <div class="expo-more-info__location">
                     Республика Беларусь, г. Минск, пр-т Победителей, д. 111,
@@ -31,30 +22,50 @@
                 </div>
                 <button class="square-orange">назначить встречу</button>
             </div>
+
+            <!-- выставки: .expo-date -->
+            <!-- Деловые встречи: .meets -->
+            <!-- Дни проведения выставки(оранжевый бордюр): .current-expo -->
+            <div class="expo-more-date-picker">
+                <div class="expo-more-date-picker__calendar" id="datepicker"></div>
+                <div class="expo-more-date-picker__tips">
+                    <span class="expo-more-date-picker__tip green-dot">Выставки</span>
+                    <span class="expo-more-date-picker__tip brown-dot">Деловые встречи</span>
+                </div>
+            </div>
         </div>
 
         <div class="expo-more-photo">
             <div class="product-and-news__title">Фотоотчет</div>
             <div class="expo-more-slider">
                 <div class="expo-more-slider__img">
-                    <img src="assets/images/expo-more/expo-more1.jpg" alt="">
+                    <a href="assets/images/expo-more/expo-more1big.jpg" class="expo-more-group">
+                        <img src="assets/images/expo-more/expo-more1.jpg" alt="">
+                    </a>
                 </div>
                 <div class="expo-more-slider__img">
-                    <img src="assets/images/expo-more/expo-more2.jpg" alt="">
+                    <a href="assets/images/expo-more/expo-more2big.jpg" class="expo-more-group">
+                        <img src="assets/images/expo-more/expo-more2.jpg" alt="">
+                    </a>
                 </div>
                 <div class="expo-more-slider__img">
-                    <img src="assets/images/expo-more/expo-more3.jpg" alt="">
+                    <a href="assets/images/expo-more/expo-more3big.jpg" class="expo-more-group">
+                        <img src="assets/images/expo-more/expo-more3.jpg" alt="">
+                    </a>
                 </div>
                 <div class="expo-more-slider__img">
-                    <img src="assets/images/expo-more/expo-more4.jpg" alt="">
+                    <a href="assets/images/expo-more/expo-more4big.jpg" class="expo-more-group">
+                        <img src="assets/images/expo-more/expo-more4.jpg" alt="">
+                    </a>
                 </div>
                 <div class="expo-more-slider__img">
-                    <img src="assets/images/expo-more/expo-more1.jpg" alt="">
+                    <a href="assets/images/expo-more/expo-more1big.jpg" class="expo-more-group">
+                        <img src="assets/images/expo-more/expo-more1.jpg" alt="">
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 //= templates/about.html
 //= templates/footer.html

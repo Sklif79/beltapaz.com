@@ -25,7 +25,7 @@
                         <li class="header-top__nav-el"><a href="#">О компании</a></li>
                         <li class="header-top__nav-el"><a href="#">Новости</a></li>
                         <li class="header-top__nav-el"><a href="#">Контакты</a></li>
-                        <li class="header-top__nav-el"><a href="#">Покупателям</a></li>
+                        <li class="header-top__nav-el"><a href="#" class="active">Покупателям</a></li>
                         <li class="header-top__nav-el"><a href="#">Выставки</a></li>
                         <li class="header-top__nav-el"><a href="#">Социальная сфера</a></li>
                     </ul>
@@ -51,7 +51,7 @@
         <div class="header-bottom">
             <div class="basic_width clearfix_">
                 <a href="" class="header-bottom__logo"><img src="assets/images/logo.png" alt=""></a>
-                <nav class="header-bottom__nav">
+                <nav class="header-bottom__nav" id="header-bottom__nav">
                     <ul class="header-bottom__nav-links">
                         <li class="header-bottom__nav-link"><a href="">Продукция</a></li>
                         <li class="header-bottom__nav-link"><a class="active" href="">Услуги</a></li>
@@ -154,9 +154,14 @@
     <div class="flex-row main-content">
         <aside class="aside">
             <form action="" method="post">
-                <div class="clearfix_">
+                <div class="clearfix_ aside-title-form">
                     <h4 class="aside__title first">Крепление</h4>
-                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                    <div class="products-tooltip">
+                        <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                        <div class="tooltip-content">
+                            какой-то текст
+                        </div>
+                    </div>
                 </div>
                 <div class="field__wrap">
                     <input type="radio" name="mount" class="form__field" id="type1">
@@ -195,9 +200,14 @@
                         <span class="field__title-border">ГОСТ 26651-85 (DIN 55029 тип Кэмлокк)</span>
                     </label>
                 </div>
-                <div class="clearfix_">
+                <div class="clearfix_ aside-title-form">
                     <h4 class="aside__title">Исполнение</h4>
-                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                    <div class="products-tooltip">
+                        <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                        <div class="tooltip-content">
+                            какой-то текст
+                        </div>
+                    </div>
                 </div>
                 <div class="field__wrap">
                     <input type="radio" name="fist" class="form__field" id="fist1">
@@ -211,9 +221,14 @@
                         <span class="field__title">Кулачки исполнения 2 (цельные)</span>
                     </label>
                 </div>
-                <div class="clearfix_">
+                <div class="clearfix_ aside-title-form">
                     <h4 class="aside__title">Количество кулачков</h4>
-                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                    <div class="products-tooltip">
+                        <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                        <div class="tooltip-content">
+                            какой-то текст
+                        </div>
+                    </div>
                 </div>
                 <div class="field__wrap">
                     <input type="checkbox" class="form__field" id="fist3">
@@ -233,9 +248,14 @@
                         <span class="field__title">6-ти кулачковый</span>
                     </label>
                 </div>
-                <div class="clearfix_">
+                <div class="clearfix_ aside-title-form">
                     <h4 class="aside__title">Диаметр патрона</h4>
-                    <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                    <div class="products-tooltip">
+                        <img src="assets/images/help-icon.png" alt="" class="help-icon">
+                        <div class="tooltip-content">
+                            какой-то текст
+                        </div>
+                    </div>
                 </div>
 
                 <!-- ползунок -->
@@ -643,6 +663,39 @@
     </div><!--footer-bottom-->
 
 </footer>
+
+<div id="send-order" class="popup"><!-- hidden inline form -->
+    <div class="popup-title">Оставить заявку на товар «Патрон
+        токарный 3-125.03.11 Ø125»
+    </div>
+
+    <div id="send-order-tab">
+        <ul>
+            <li><a href="#tab-person">Физ. лицо</a></li>
+            <li><a href="#tab-legal-entity">Юр. лицо</a></li>
+        </ul>
+        <div id="tab-person">
+            <form action="" method="post" name="person-order" class="popup-form">
+                <input type="text" placeholder="Имя*">
+                <input type="text" placeholder="Номер телефона*">
+                <input type="text" placeholder="Электронная почта*">
+
+                <button type="submit" class="send-order__btn">Отправить заявку</button>
+            </form>
+        </div>
+        <div id="tab-legal-entity">
+            <form action="" method="post" name="legal-entity-order" class="popup-form">
+                <input type="text" placeholder="Имя*">
+                <input type="text" placeholder="Номер телефона*">
+                <input type="text" placeholder="Название компании*">
+                <input type="text" placeholder="Сайт компании">
+
+                <button type="submit" class="send-order__btn">Отправить заявку</button>
+            </form>
+        </div>
+
+    </div>
+</div>
 
 <script src="assets/js/libs.js"></script>
 <script src="assets/js/main.js"></script>
