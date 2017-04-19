@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/tablet.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
 
     <!--[if IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -20,6 +22,24 @@
     <header class="header">
         <div class="header-top">
             <div class="basic_width clearfix_">
+                <div class="mobile-nav__close desktop_none">
+                    Закрыть
+                </div>
+
+                <div class="mobile-nav__search desktop_none">
+                    <form action="" method="post" class="clearfix_ mobile-nav__search-form">
+                        <input class="mobile-nav__search-el" type="text" placeholder="Поиск...">
+                        <input class="mobile-nav__search-el" type="submit" value="">
+                    </form>
+                </div>
+
+                <nav class="mobile-top-nav  desktop_none">
+                    <ul class="mobile-top-nav__list">
+                        <li class="mobile-top-nav__el"><a href="">Продукция</a></li>
+                        <li class="mobile-top-nav__el"><a href="">Услуги</a></li>
+                        <li class="mobile-top-nav__el"><a href="">Дилеры</a></li>
+                    </ul>
+                </nav>
                 <nav class="header-top__nav">
                     <ul class="">
                         <li class="header-top__nav-el"><a href="#">О компании</a></li>
@@ -212,7 +232,7 @@
         <!--<div class="footer-top clearfix_">-->
         <div class="footer-top__logo">
             <a href=""><img src="assets/images/logo.png" alt=""></a>
-            <div class="footer-top__copyright">
+            <div class="footer-top__copyright mobile_hidden">
                 &copy; 2000 - 2017 — ОАО «БелТАПАЗ»
             </div>
         </div>
@@ -277,12 +297,15 @@
     <div class="footer-bottom ">
         <div class="basic_width footer-bottom-wrap">
             <div class="footer-bottom__social">
-                Мы в сети:
+                <span class="mobile_hidden">Мы в сети:</span>
                 <div class="footer-bottom__social-icon">
                     <div class="social-top__item youtube"><a href="#"></a></div>
                     <div class="social-top__item le"><a href="#"></a></div>
                     <div class="social-top__item hz"><a href="#"></a></div>
                 </div>
+            </div>
+            <div class="footer-top__copyright mobile_show">
+                &copy; 2000 - 2017 — ОАО «БелТАПАЗ»
             </div>
             <div class="footer-bottom__count">
                 <img src="assets/images/count.jpg" alt="">
@@ -301,6 +324,7 @@
 
 </footer>
 
+<!-- popup -->
 <div id="send-order" class="popup"><!-- hidden inline form -->
     <div class="popup-title">Оставить заявку на товар «Патрон
         токарный 3-125.03.11 Ø125»

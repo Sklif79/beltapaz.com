@@ -55,9 +55,7 @@ $(document).ready(function () {
         dotsClass: 'slider-dots',
         nextArrow: '<div class="slider-next"></div>',
         prevArrow: '<div class="slider-prev"></div>',
-        arrows: true,
-        adaptiveHeight: true,
-        centerMode: true
+        arrows: true
     });
 
     $('.slider-partners').slick({
@@ -67,7 +65,22 @@ $(document).ready(function () {
         dots: false,
         nextArrow: '<div class="slider-next"></div>',
         prevArrow: '<div class="slider-prev"></div>',
-        arrows: true
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+
+            {
+                breakpoint: 498,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     $('.slider-news').slick({
@@ -77,7 +90,22 @@ $(document).ready(function () {
         dots: false,
         nextArrow: '<div class="slider-next"></div>',
         prevArrow: '<div class="slider-prev"></div>',
-        arrows: true
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+
+            {
+                breakpoint: 498,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     $('.expo-more-slider').slick({
@@ -173,7 +201,7 @@ function searchActive() {
 
 
     el.on('click', function () {
-        nav.hide().css('position', 'absolute');
+        nav.hide();
         el.parent().addClass('focus');
         $('.header-bottom__search-el').attr('placeholder', 'Введите название товара...');
         $('.header-bottom__search-btn').val('Поиск');

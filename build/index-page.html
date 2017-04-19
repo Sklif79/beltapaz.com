@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/tablet.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
 
     <!--[if IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -17,78 +19,108 @@
 <body>
 <div class="wrapper">
     <!-- header -->
-    <header class="header-index">
-        <div class="header-top">
-            <div class="basic_width clearfix_">
-                <nav class="header-top__nav">
-                    <ul class="">
-                        <li class="header-top__nav-el"><a href="#">О компании</a></li>
-                        <li class="header-top__nav-el"><a href="#">Новости</a></li>
-                        <li class="header-top__nav-el"><a href="#" class="active">Контакты</a></li>
-                        <li class="header-top__nav-el"><a href="#">Покупателям</a></li>
-                        <li class="header-top__nav-el"><a href="#">Выставки</a></li>
-                        <li class="header-top__nav-el"><a href="#">Социальная сфера</a></li>
-                    </ul>
-                </nav>
+    <div class="index-top-wrap">
+        <header class="header-index">
+            <div class="header-top">
+                <div class="basic_width clearfix_">
+                    <div class="mobile-nav__close desktop_none">
+                        Закрыть
+                    </div>
 
-                <div class="dropdown-lang">
-                    <div class="dropbtn-lang" data-lang="ru">Русский</div>
-                    <div class="dropdown-lang-content">
-                        <a href="#" data-lang="eng">English</a>
-                        <a href="#" data-lang="ger">German</a>
-                        <a href="#" data-lang="sp">Spanish</a>
+                    <div class="mobile-nav__search desktop_none">
+                        <form action="" method="post" class="clearfix_ mobile-nav__search-form">
+                            <input class="mobile-nav__search-el" type="text" placeholder="Поиск...">
+                            <input class="mobile-nav__search-el" type="submit" value="">
+                        </form>
+                    </div>
+
+                    <nav class="mobile-top-nav  desktop_none">
+                        <ul class="mobile-top-nav__list">
+                            <li class="mobile-top-nav__el"><a href="">Продукция</a></li>
+                            <li class="mobile-top-nav__el"><a href="">Услуги</a></li>
+                            <li class="mobile-top-nav__el"><a href="">Дилеры</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav class="header-top__nav">
+                        <ul class="">
+                            <li class="header-top__nav-el"><a href="#">О компании</a></li>
+                            <li class="header-top__nav-el"><a href="#">Новости</a></li>
+                            <li class="header-top__nav-el"><a href="#" class="active">Контакты</a></li>
+                            <li class="header-top__nav-el"><a href="#">Покупателям</a></li>
+                            <li class="header-top__nav-el"><a href="#">Выставки</a></li>
+                            <li class="header-top__nav-el"><a href="#">Социальная сфера</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="dropdown-lang">
+                        <div class="dropbtn-lang" data-lang="ru">Русский</div>
+                        <div class="dropdown-lang-content">
+                            <a href="#" data-lang="eng">English</a>
+                            <a href="#" data-lang="ger">German</a>
+                            <a href="#" data-lang="sp">Spanish</a>
+                        </div>
+                    </div>
+
+                    <div class="social-top">
+                        <div class="social-top__item youtube"><a href="#"></a></div>
+                        <div class="social-top__item le"><a href="#"></a></div>
+                        <div class="social-top__item hz"><a href="#"></a></div>
                     </div>
                 </div>
+            </div>
 
-                <div class="social-top">
-                    <div class="social-top__item youtube"><a href="#"></a></div>
-                    <div class="social-top__item le"><a href="#"></a></div>
-                    <div class="social-top__item hz"><a href="#"></a></div>
+            <div class="header-bottom">
+                <div class="basic_width clearfix_">
+                    <a href="" class="header-bottom__logo"><img src="assets/images/logo.png" alt=""></a>
+                    <nav id="header-bottom__nav" class="header-bottom__nav">
+                        <ul class="header-bottom__nav-links">
+                            <li class="header-bottom__nav-link"><a class="active" href="">Продукция</a></li>
+                            <li class="header-bottom__nav-link"><a href="">Услуги</a></li>
+                            <li class="header-bottom__nav-link"><a href="">Дилеры</a></li>
+                        </ul>
+                    </nav>
+                    <form action="" method="post" class="clearfix_ header-bottom__search">
+                        <input class="header-bottom__search-el" type="text" placeholder="Поиск...">
+                        <input class="header-bottom__search-btn" type="submit" value="">
+                        <div class="header-bottom__search-close">Закрыть</div>
+                    </form>
                 </div>
             </div>
+        </header>
+
+        <div class="promo-slider-wrap">
+            <div class="promo-slider">
+                <div class="promo-slider__item">
+                    <div class="basic_width">
+                        <img src="assets/images/slider-index-clear.png" class="promo-slider__img" alt="">
+                        <div class="promo-slider__title">
+                            Точность, которую невозможно повторить
+                        </div>
+                        <a href="" class="promo-slider__btn">Перейти в каталог</a>
+                    </div>
+                </div>
+                <div class="promo-slider__item">
+
+                    <div class="basic_width">
+                        <img src="assets/images/slider-index-clear.png" alt="">
+                        <div class="promo-slider__title">
+                            Точность, которую невозможно повторить
+                        </div>
+                        <a href="" class="promo-slider__btn">Перейти в каталог</a>
+                    </div>
+                </div>
+                <div class="promo-slider__item">
+                    <div class="basic_width">
+                        <img src="assets/images/slider-index-clear.png" alt="">
+                        <div class="promo-slider__title">
+                            Точность, которую невозможно повторить
+                        </div>
+                        <a href="" class="promo-slider__btn">Перейти в каталог</a>
+                    </div>
+                </div>
+            </div><!--promo-slider-->
         </div>
-
-        <div class="header-bottom">
-            <div class="basic_width clearfix_">
-                <a href="" class="header-bottom__logo"><img src="assets/images/logo.png" alt=""></a>
-                <nav class="header-bottom__nav">
-                    <ul class="header-bottom__nav-links">
-                        <li class="header-bottom__nav-link"><a class="active" href="">Продукция</a></li>
-                        <li class="header-bottom__nav-link"><a href="">Услуги</a></li>
-                        <li class="header-bottom__nav-link"><a href="">Дилеры</a></li>
-                    </ul>
-                </nav>
-                <form action="" method="post" class="clearfix_ header-bottom__search">
-                    <input class="header-bottom__search-el" type="text" placeholder="Поиск...">
-                    <input class="header-bottom__search-btn" type="submit" value="">
-                    <div class="header-bottom__search-close">Закрыть</div>
-                </form>
-            </div>
-        </div>
-    </header>
-
-    <div class="promo-slider-wrap">
-        <div class="promo-slider">
-            <div class="promo-slider__item">
-                <div class="basic_width">
-                    <a href="" class="promo-slider__btn">Перейти в каталог</a>
-                    <img src="assets/images/slider-index.png" alt="">
-                </div>
-            </div>
-            <div class="promo-slider__item">
-
-                <div class="basic_width">
-                    <a href="" class="promo-slider__btn">Перейти в каталог</a>
-                    <img src="assets/images/slider-index.png" alt="">
-                </div>
-            </div>
-            <div class="promo-slider__item">
-                <div class="basic_width">
-                    <a href="" class="promo-slider__btn">Перейти в каталог</a>
-                    <img src="assets/images/slider-index.png" alt="">
-                </div>
-            </div>
-        </div><!--promo-slider-->
     </div>
 
     <div class="product-and-news clearfix_">
@@ -99,108 +131,142 @@
 
                 <nav class="product-preview__nav">
                     <div class="product-preview__nav-item">
-                        <a href="" class="product-preview__nav-item-link">
-                            <img src="assets/images/product/product-1.png" alt=""
-                                 class="product-preview__nav-item-image">
-                            <div class="product-preview__nav-item-title">
-                                Токарные патроны
-                                (с ручным зажимом)
-                            </div>
-                        </a>
+
+                        <div class="product-preview__nav-item-image">
+                            <img src="assets/images/product/product-1img.png">
+                        </div>
+                        <div class="product-preview-title-wrap">
+                            <span class="product-preview__nav-item-title">
+                            Токарные патроны
+                            (с ручным зажимом)
+                                </span>
+                        </div>
+                        <a href="" class="product-preview__nav-item-link"></a>
                     </div>
 
                     <div class="product-preview__nav-item">
-                        <a href="" class="product-preview__nav-item-link">
-                            <img src="assets/images/product/product-2.png" alt=""
-                                 class="product-preview__nav-item-image">
-                            <div class="product-preview__nav-item-title">
-                                Токарные патроны
-                                (с мех. зажимом)
-                            </div>
-                        </a>
+                        <div class="product-preview__nav-item-image">
+                            <img src="assets/images/product/product-2img.png">
+                        </div>
+                        <div class="product-preview-title-wrap">
+                            <span class="product-preview__nav-item-title">
+                            Токарные патроны
+                            (с мех. зажимом)
+                            </span>
+                        </div>
+                        <a href="" class="product-preview__nav-item-link"></a>
                     </div>
 
                     <div class="product-preview__nav-item">
-                        <a href="" class="product-preview__nav-item-link">
-                            <img src="assets/images/product/product-3.png" alt=""
-                                 class="product-preview__nav-item-image">
-                            <div class="product-preview__nav-item-title">
-                                Специальные
-                                патроны
-                            </div>
-                        </a>
+                        <div class="product-preview__nav-item-image">
+                            <img src="assets/images/product/product-3img.png">
+                        </div>
+                        <div class="product-preview-title-wrap">
+                            <span class="product-preview__nav-item-title">
+                            Специальные
+                            патроны
+                            </span>
+                        </div>
+                        <a href="" class="product-preview__nav-item-link"></a>
                     </div>
 
                     <div class="product-preview__nav-item">
-                        <a href="" class="product-preview__nav-item-link">
-                            <img src="assets/images/product/product-4.png" alt=""
-                                 class="product-preview__nav-item-image">
-                            <div class="product-preview__nav-item-title">
-                                Запчасти к патронам
-                            </div>
-                        </a>
+                        <div class="product-preview__nav-item-image">
+                            <img src="assets/images/product/product-4img.png">
+                        </div>
+                        <div class="product-preview-title-wrap">
+                            <span class="product-preview__nav-item-title">
+                            Запчасти к патронам
+                            </span>
+                        </div>
+                        <a href="" class="product-preview__nav-item-link"></a>
                     </div>
 
                     <div class="product-preview__nav-item">
-                        <a href="" class="product-preview__nav-item-link">
-                            <img src="assets/images/product/product-5.png" alt=""
-                                 class="product-preview__nav-item-image">
-                            <div class="product-preview__nav-item-title">
-                                Комплектующие
-                                для тракторов МТЗ
-                            </div>
-                        </a>
+                        <div class="product-preview__nav-item-image">
+                            <img src="assets/images/product/product-5img.png">
+                        </div>
+                        <div class="product-preview-title-wrap">
+                            <span class="product-preview__nav-item-title">
+                            Комплектующие
+                            для тракторов МТЗ
+                            </span>
+                        </div>
+                        <a href="" class="product-preview__nav-item-link"></a>
                     </div>
 
                     <div class="product-preview__nav-item">
-                        <a href="" class="product-preview__nav-item-link">
-                            <img src="assets/images/product/product-6.png" alt=""
-                                 class="product-preview__nav-item-image">
-                            <div class="product-preview__nav-item-title">
-                                Товары народного
-                                потребления
-                            </div>
-                        </a>
+                        <div class="product-preview__nav-item-image">
+                            <img src="assets/images/product/product-6img.png">
+                        </div>
+                        <div class="product-preview-title-wrap">
+                            <span class="product-preview__nav-item-title">
+                            Товары народного
+                            потребления
+                            </span>
+                        </div>
+                        <a href="" class="product-preview__nav-item-link"></a>
                     </div>
 
                 </nav>
 
             </section>
 
+            <!-- на десктопе 2 новостных блока, на 768px - 3, на мобилке снова 2 -->
             <section class="news-preview">
                 <h2 class="product-and-news__title">НОВОСТИ</h2>
 
                 <div class="news-preview-block clearfix_">
-                    <div class="news-preview-block__item">
-                        <div class="news-preview-block__item-image">
-                            <img src="assets/images/news/news-preview-1.jpg" alt="">
-                            <div class="news-preview-block__item-overlay"></div>
-                            <div class="news-preview-block__more">Подробнее</div>
+                    <div class="news-preview-block-wrap">
+                        <div class="news-preview-block__item">
+                            <div class="news-preview-block__item-image">
+                                <img src="assets/images/news/news-preview-1.jpg" alt="">
+                                <div class="news-preview-block__item-overlay"></div>
+                                <div class="news-preview-block__more">Подробнее</div>
+                            </div>
+                            <div class="news-preview-block__item-title">
+                                Двойную победу
+                                в конкурсе
+                                «Лучшие товары
+                                Республики Беларусь»
+                                2016 года одержало
+                                ОАО «Гродненский завод
+                                токарных патронов
+                                «БелТАПАЗ»
+                            </div>
+                            <a href=""></a>
                         </div>
-                        <div class="news-preview-block__item-title">
-                            Двойную победу
-                            в конкурсе
-                            «Лучшие товары
-                            Республики Беларусь»
-                            2016 года одержало
-                            ОАО «Гродненский завод
-                            токарных патронов
-                            «БелТАПАЗ»
+                        <div class="news-preview-block__item">
+                            <div class="news-preview-block__item-image">
+                                <img src="assets/images/news/news-preview-2.jpg" alt="">
+                                <div class="news-preview-block__item-overlay"></div>
+                                <div class="news-preview-block__more">Подробнее</div>
+                            </div>
+                            <div class="news-preview-block__item-title">
+                                Выставки: Приглашаем
+                                посетить наш
+                                коллективный стенд!
+                            </div>
+                            <a href=""></a>
                         </div>
-                        <a href=""></a>
-                    </div>
-                    <div class="news-preview-block__item">
-                        <div class="news-preview-block__item-image">
-                            <img src="assets/images/news/news-preview-2.jpg" alt="">
-                            <div class="news-preview-block__item-overlay"></div>
-                            <div class="news-preview-block__more">Подробнее</div>
+                        <div class="news-preview-block__item tablet_show">
+                            <div class="news-preview-block__item-image">
+                                <img src="assets/images/news/news-preview-1.jpg" alt="">
+                                <div class="news-preview-block__item-overlay"></div>
+                                <div class="news-preview-block__more">Подробнее</div>
+                            </div>
+                            <div class="news-preview-block__item-title">
+                                Двойную победу
+                                в конкурсе
+                                «Лучшие товары
+                                Республики Беларусь»
+                                2016 года одержало
+                                ОАО «Гродненский завод
+                                токарных патронов
+                                «БелТАПАЗ»
+                            </div>
+                            <a href=""></a>
                         </div>
-                        <div class="news-preview-block__item-title">
-                            Выставки: Приглашаем
-                            посетить наш
-                            коллективный стенд!
-                        </div>
-                        <a href=""></a>
                     </div>
                     <a href="" class="news-preview-block__btn">Все новости</a>
                 </div>
@@ -211,9 +277,13 @@
 
     <div class="partners">
         <div class="basic_width clearfix_">
-            <div class="dark-bg">
-                <h2 class="h2-title">НАШИ ПАРТНЁРЫ</h2>
+
+            <div class="dark-bg-wrap">
+                <div class="dark-bg">
+                    <h2 class="h2-title">НАШИ ПАРТНЁРЫ</h2>
+                </div>
             </div>
+
 
             <div class="slider-partners">
                 <div class="slider-partners__item">
@@ -386,7 +456,7 @@
             <!--<div class="footer-top clearfix_">-->
             <div class="footer-top__logo">
                 <a href=""><img src="assets/images/logo.png" alt=""></a>
-                <div class="footer-top__copyright">
+                <div class="footer-top__copyright mobile_hidden">
                     &copy; 2000 - 2017 — ОАО «БелТАПАЗ»
                 </div>
             </div>
@@ -451,12 +521,15 @@
         <div class="footer-bottom ">
             <div class="basic_width footer-bottom-wrap">
                 <div class="footer-bottom__social">
-                    Мы в сети:
+                    <span class="mobile_hidden">Мы в сети:</span>
                     <div class="footer-bottom__social-icon">
                         <div class="social-top__item youtube"><a href="#"></a></div>
                         <div class="social-top__item le"><a href="#"></a></div>
                         <div class="social-top__item hz"><a href="#"></a></div>
                     </div>
+                </div>
+                <div class="footer-top__copyright mobile_show">
+                    &copy; 2000 - 2017 — ОАО «БелТАПАЗ»
                 </div>
                 <div class="footer-bottom__count">
                     <img src="assets/images/count.jpg" alt="">
@@ -475,6 +548,7 @@
     
     </footer>
     
+    <!-- popup -->
     <div id="send-order" class="popup"><!-- hidden inline form -->
         <div class="popup-title">Оставить заявку на товар «Патрон
             токарный 3-125.03.11 Ø125»

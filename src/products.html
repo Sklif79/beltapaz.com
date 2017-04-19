@@ -5,7 +5,7 @@
 
 <div class="basic_width main">
     <div class="products-nav">
-        <div class="products-nav__item">
+        <div class="products-nav__item active">
             <a href="" class="products-nav__link">
                 <img src="assets/images/products-nav-1.jpg" alt="" class="products-nav__image">
                 <div class="products-nav__title">
@@ -21,7 +21,7 @@
                 <img src="assets/images/products-nav-2.jpg" alt="" class="products-nav__image">
                 <div class="products-nav__title">
                     Токарные патроны<br>
-                    (с механизированным<br>
+                    (с мех<span class="products-nav_show-tablet">.</span><span class="products-nav_hide-tablet">анизированным</span><br>
                     зажимом)
                 </div>
                 <div class="products-nav__border"></div>
@@ -52,7 +52,7 @@
             <a href="" class="products-nav__link">
                 <img src="assets/images/products-nav-5.jpg" alt="" class="products-nav__image">
                 <div class="products-nav__title">
-                    Комплектующие<br>
+                    <span class="products-nav_show-tablet">Комплек-щие</span><span class="products-nav_hide-tablet">Комплектующие<br></span>
                     к тракторам МТЗ
                 </div>
                 <div class="products-nav__border"></div>
@@ -73,6 +73,12 @@
     </div><!--products-nav-->
 
     <div class="flex-row main-content">
+        <div class="aside-toggle">
+            <div class="aside-toggle__content">
+                Фильтр
+            </div>
+            <div class="aside-toggle__arrow"></div>
+        </div>
         <aside class="aside">
             <form action="" method="post">
                 <div class="clearfix_ aside-title-form">
@@ -84,43 +90,46 @@
                         </div>
                     </div>
                 </div>
-                <div class="field__wrap">
-                    <input type="radio" name="mount" class="form__field" id="type1">
-                    <label class="field__label" for="type1">
-                        <span class="field__title">Тип 1 - </span>
-                        <span class="field__title-border">ГОСТ 3889-80</span>
-                    </label>
-                </div>
-                <div class="field__wrap">
+                <div class="field-wraps">
                     <div class="field__wrap">
-                        <input type="radio" name="mount" class="form__field" id="type1din">
-                        <label class="field__label" for="type1din">
+                        <input type="radio" name="mount" class="form__field" id="type1">
+                        <label class="field__label" for="type1">
                             <span class="field__title">Тип 1 - </span>
-                            <span class="field__title-border">DIN 6350</span>
+                            <span class="field__title-border">ГОСТ 3889-80</span>
+                        </label>
+                    </div>
+                    <div class="field__wrap">
+                        <div class="field__wrap">
+                            <input type="radio" name="mount" class="form__field" id="type1din">
+                            <label class="field__label" for="type1din">
+                                <span class="field__title">Тип 1 - </span>
+                                <span class="field__title-border">DIN 6350</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="field__wrap">
+                        <input type="radio" name="mount" class="form__field" id="type2">
+                        <label class="field__label" for="type2">
+                            <span class="field__title">Тип 2 - </span>
+                            <span class="field__title-border">ГОСТ 12593-72 (DIN 55027)</span>
+                        </label>
+                    </div>
+                    <div class="field__wrap">
+                        <input type="radio" name="mount" class="form__field" id="type3">
+                        <label class="field__label" for="type3">
+                            <span class="field__title">Тип 3 - </span>
+                            <span class="field__title-border">ГОСТ 12595-85 (DIN 55026)</span>
+                        </label>
+                    </div>
+                    <div class="field__wrap">
+                        <input type="radio" name="mount" class="form__field" id="type4">
+                        <label class="field__label" for="type4">
+                            <span class="field__title">Тип 4 - </span>
+                            <span class="field__title-border">ГОСТ 26651-85 (DIN 55029 тип Кэмлокк)</span>
                         </label>
                     </div>
                 </div>
-                <div class="field__wrap">
-                    <input type="radio" name="mount" class="form__field" id="type2">
-                    <label class="field__label" for="type2">
-                        <span class="field__title">Тип 2 - </span>
-                        <span class="field__title-border">ГОСТ 12593-72 (DIN 55027)</span>
-                    </label>
-                </div>
-                <div class="field__wrap">
-                    <input type="radio" name="mount" class="form__field" id="type3">
-                    <label class="field__label" for="type3">
-                        <span class="field__title">Тип 3 - </span>
-                        <span class="field__title-border">ГОСТ 12595-85 (DIN 55026)</span>
-                    </label>
-                </div>
-                <div class="field__wrap">
-                    <input type="radio" name="mount" class="form__field" id="type4">
-                    <label class="field__label" for="type4">
-                        <span class="field__title">Тип 4 - </span>
-                        <span class="field__title-border">ГОСТ 26651-85 (DIN 55029 тип Кэмлокк)</span>
-                    </label>
-                </div>
+                <!---->
                 <div class="clearfix_ aside-title-form">
                     <h4 class="aside__title">Исполнение</h4>
                     <div class="products-tooltip">
@@ -130,18 +139,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="field__wrap">
-                    <input type="radio" name="fist" class="form__field" id="fist1">
-                    <label class="field__label" for="fist1">
-                        <span class="field__title">Кулачки исполнения 1 (цельные)</span>
-                    </label>
+                <div class="field-wraps">
+                    <div class="field__wrap">
+                        <input type="radio" name="fist" class="form__field" id="fist1">
+                        <label class="field__label" for="fist1">
+                            <span class="field__title">Кулачки исполнения 1 (цельные)</span>
+                        </label>
+                    </div>
+                    <div class="field__wrap">
+                        <input type="radio" name="fist" class="form__field" id="fist2">
+                        <label class="field__label" for="fist2">
+                            <span class="field__title">Кулачки исполнения 2 (цельные)</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="field__wrap">
-                    <input type="radio" name="fist" class="form__field" id="fist2">
-                    <label class="field__label" for="fist2">
-                        <span class="field__title">Кулачки исполнения 2 (цельные)</span>
-                    </label>
-                </div>
+                <!---->
                 <div class="clearfix_ aside-title-form">
                     <h4 class="aside__title">Количество кулачков</h4>
                     <div class="products-tooltip">
@@ -151,24 +163,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="field__wrap">
-                    <input type="checkbox" class="form__field" id="fist3">
-                    <label class="field__label-checkbox" for="fist3">
-                        <span class="field__title">3-х кулачковый</span>
-                    </label>
+                <div class="field-wraps">
+                    <div class="field__wrap">
+                        <input type="checkbox" class="form__field" id="fist3">
+                        <label class="field__label-checkbox" for="fist3">
+                            <span class="field__title">3-х кулачковый</span>
+                        </label>
+                    </div>
+                    <div class="field__wrap">
+                        <input type="checkbox" class="form__field" id="fist4">
+                        <label class="field__label-checkbox" for="fist4">
+                            <span class="field__title">4-х кулачковый</span>
+                        </label>
+                    </div>
+                    <div class="field__wrap">
+                        <input type="checkbox" class="form__field" id="fist6">
+                        <label class="field__label-checkbox" for="fist6">
+                            <span class="field__title">6-ти кулачковый</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="field__wrap">
-                    <input type="checkbox" class="form__field" id="fist4">
-                    <label class="field__label-checkbox" for="fist4">
-                        <span class="field__title">4-х кулачковый</span>
-                    </label>
-                </div>
-                <div class="field__wrap">
-                    <input type="checkbox" class="form__field" id="fist6">
-                    <label class="field__label-checkbox" for="fist6">
-                        <span class="field__title">6-ти кулачковый</span>
-                    </label>
-                </div>
+                <!---->
                 <div class="clearfix_ aside-title-form">
                     <h4 class="aside__title">Диаметр патрона</h4>
                     <div class="products-tooltip">
@@ -192,9 +207,9 @@
                         <div class="range-info__to">до 500 мм</div>
                     </div>
 
-                    <button type="submit" class="news-preview-block__btn">Подобрать</button>
                 </div>
                 <!--/-->
+                <button type="submit" class="news-preview-block__btn">Подобрать</button>
 
             </form>
         </aside>
