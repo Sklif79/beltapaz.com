@@ -3,7 +3,7 @@
 @import "slick-theme.css";
 @import "jquery-ui.min.css";
 @import "jquery.fancybox.css";
-/*@import "jquery.bxslider.min.css";*/
+@import "jquery.mCustomScrollbar.css";
 @import "reset.css";
 
 /************************* Fonts *************************/
@@ -843,13 +843,13 @@ a.bread-crumbs__link:hover {
 .tooltip-content {
     display: none;
     position: absolute;
-    right: -170px;
+    left: 50px;
     top: 0;
     padding: 10px;
     border: 1px solid #ec6703;
     border-radius: 5px;
     background-color: #fff;
-    width: 150px;
+    min-width: 300px;
     z-index: 10;
 
 }
@@ -1782,11 +1782,19 @@ button:hover {
     float: left;
     padding-right: 50px;
     padding-bottom: 45px;
+    width: 44.562%;
+    min-width: 345px;
 }
 
 #tab-photo, #tabs-drawing {
-    width: 458px;
-    height: 458px;
+    /*width: 458px;*/
+    max-width:458px;
+    max-height: 458px;
+    /*height: 458px;*/
+}
+
+#tab-photo img, #tabs-drawing img {
+    max-width: 100%;
 }
 
 .product-card__image ul {
@@ -1796,7 +1804,8 @@ button:hover {
 .product-card__image li {
     display: inline-block;
     background-color: rgb(230, 230, 230);
-    width: 229px;
+    /*width: 229px;*/
+    width: 50%;
     height: 50px;
     font-family: RobotoRegular, serif;
     font-size: 1.125rem;
@@ -2050,6 +2059,10 @@ button:hover {
     display: block;
 }
 
+.review-form input {
+    width: 31.57894736842105%;
+}
+
 .review-form textarea {
     resize: none;
     height: 112px;
@@ -2128,15 +2141,15 @@ button:hover {
 }
 
 .recommendation__item {
-    width: 265px;
-    -ms-flex-preferred-size: 265px;
-    flex-basis: 265px;
+    /*width: 265px;*/
+    width: 23.24561403508772%;
+    /*flex-basis: 265px;*/
     display: inline-block;
 }
 
 .recommendation__title {
-    padding: 15px 20px 0 18px;
-    height: 80px;
+    padding: 15px 20px 10px 18px;
+    height: 70px;
     overflow: hidden;
     background-color: #f7f7f7;
     font-family: RobotoSlabRegular, serif;
@@ -3666,15 +3679,25 @@ button:hover {
 
 .aside-toggle {
     display: none;
-    padding-left: 40px;
+    padding: 14px 20px 9px 40px;
     position: relative;
+}
+
+.aside-toggle_border {
+    border-bottom: 1px solid #edaa77;
 }
 
 .aside-toggle::before {
     position: absolute;
     content: '';
+}
 
+.products-nav-toggle {
+    display: none;
+}
 
+.products-nav__mob-vis {
+    display: none;
 }
 
 @media all and (max-width: 1200px) {

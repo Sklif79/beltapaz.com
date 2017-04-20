@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+
+
+
+    asideToggle();
+
     mapFooter();
 
     searchActive();
@@ -10,11 +15,11 @@ $(document).ready(function () {
 
     $('a.expo-more-group, a.awards-slider-group, a.awards-slider-group').fancybox({
         closeBtn: true,
-        padding:0,
-        helpers : {
-            overlay : {
-                css : {
-                    'background' : 'rgba(0,0,0,0.5)'
+        padding: 0,
+        helpers: {
+            overlay: {
+                css: {
+                    'background': 'rgba(0,0,0,0.5)'
                 }
             }
         }
@@ -22,11 +27,11 @@ $(document).ready(function () {
 
     $('a.modalbox').fancybox({
         closeBtn: true,
-        padding:0,
-        helpers : {
-            overlay : {
-                css : {
-                    'background' : 'rgba(0,0,0,0.5)'
+        padding: 0,
+        helpers: {
+            overlay: {
+                css: {
+                    'background': 'rgba(0,0,0,0.5)'
                 }
             }
         }
@@ -137,6 +142,36 @@ $(document).ready(function () {
         prevArrow: '<div class="about-slider-prev"></div>',
         arrows: true
     });
+
+
+
+
+    //tablet
+    if ( $(window).width() < 730 ) {
+        $("#card-tabs").mCustomScrollbar({
+            axis:"x",
+            advanced:{autoExpandHorizontalScroll:true}
+        });
+    }
+
+
+    //mobile
+    if ( $(window).width() < 498 ) {
+        $('.recommendation').slick({
+            // infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false,
+            nextArrow: '<div class="about-slider-next"></div>',
+            prevArrow: '<div class="about-slider-prev"></div>',
+            arrows: true
+        });
+
+        $(".product-card__table-wrap").mCustomScrollbar({
+            axis:"x",
+            advanced:{autoExpandHorizontalScroll:true}
+        });
+    }
 
 });
 
@@ -280,13 +315,13 @@ function dataPickerEsp() {
         prevText: "&#x3C;Ant",
         nextText: "Sig&#x3E;",
         currentText: "Hoy",
-        monthNames: [ "enero","febrero","marzo","abril","mayo","junio",
-            "julio","agosto","septiembre","octubre","noviembre","diciembre" ],
-        monthNamesShort: [ "ene","feb","mar","abr","may","jun",
-            "jul","ago","sep","oct","nov","dic" ],
-        dayNames: [ "domingo","lunes","martes","miércoles","jueves","viernes","sábado" ],
-        dayNamesShort: [ "dom","lun","mar","mié","jue","vie","sáb" ],
-        dayNamesMin: [ "D","L","M","X","J","V","S" ],
+        monthNames: ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+            "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+        monthNamesShort: ["ene", "feb", "mar", "abr", "may", "jun",
+            "jul", "ago", "sep", "oct", "nov", "dic"],
+        dayNames: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
+        dayNamesShort: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+        dayNamesMin: ["D", "L", "M", "X", "J", "V", "S"],
         weekHeader: "Sm",
         dateFormat: "dd/mm/yy",
         firstDay: 1,
@@ -317,3 +352,127 @@ function datapickerLang() {
             $.datepicker.setDefaults($.datepicker.regional['']);
     }
 }
+
+
+function asideToggle() {
+    if ($(window).width() < 1041) {
+        $('aside.aside').slideUp(0);
+        $('.filter-wrap').removeClass('active');
+        $('.aside-toggle').removeClass('aside-toggle_border');
+
+        $('.aside-toggle').on('click', function () {
+            $('aside.aside').slideToggle();
+            $(this).toggleClass('aside-toggle_border');
+            $('.filter-wrap').toggleClass('active');
+
+            if ( $(window).width() < 498 ) {
+                $('.products-nav').slideUp(0);
+                $('.products-nav__wrap').removeClass('active');
+            }
+        });
+    }
+
+    if ( $(window).width() < 498 ) {
+        $('.products-nav').slideUp(0);
+
+        $('.products-nav-toggle').on('click', function () {
+            $('.products-nav').slideToggle();
+            $(this).toggleClass('aside-toggle_border');
+            $('.products-nav__wrap').toggleClass('active');
+
+            $('aside.aside').slideUp(0);
+            $('.filter-wrap').removeClass('active');
+            $('.aside-toggle').removeClass('aside-toggle_border');
+        });
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+    //плагин
+    jQuery.fn.liTextLength = function(options){
+        // настройки по умолчанию
+        var o = jQuery.extend({
+            length: 150,                                    //Видимое кол-во символов
+            afterLength: '...',                                //Текст после видимого содержания
+            fullText:true,                                    //Добавить ссылку для отображения скрытого текста
+            moreText: '<br>полный&nbsp;текст',                //Текст ссылки до показа скрытого содержания
+            lessText: '<br>скрыть&nbsp;полный&nbsp;текст'    //Текст ссылки после показа скрытого содержания
+        },options);
+        return this.each(function(){
+            var
+                $el = $(this),
+                elText = $.trim($el.text()),
+                elLength = elText.length;
+            if(elLength > o.length){
+                var
+                    textSlice = $.trim(elText.substr(0,o.length)),
+                    textSliced = $.trim(elText.substr(o.length));
+                if(textSlice.length < o.length){
+                    var
+                        textVisible = textSlice,
+                        textHidden = $.trim(elText.substr(o.length));
+                }else{
+                    var
+                        arrSlice = textSlice.split(' '),
+                        popped = arrSlice.pop(),
+                        textVisible = arrSlice.join(' ') + ' ',
+                        textHidden = popped + textSliced  + ' ';
+                };
+                var
+                    $elTextHidden = $('<span>').addClass('elTextHidden').html(textHidden),
+                    $afterLength = $('<span>').addClass('afterLength').html(o.afterLength + ' '),
+                    $more = $('<span>').addClass('more').html(o.moreText);
+                $el.text(textVisible).append($afterLength).append($elTextHidden);
+                var displayStyle = $elTextHidden.css('display');
+                $elTextHidden.hide();
+                if(o.fullText){
+                    $el.append($more);
+                    $more.click(function(){
+                        if($elTextHidden.is(':hidden')){
+                            $elTextHidden.css({display:displayStyle})    ;
+                            $more.html(o.lessText);
+                            $afterLength.hide();
+                        }else{
+                            $elTextHidden.hide();
+                            $more.html(o.moreText);
+                            $afterLength.show();
+                        };
+                        return false;
+                    });
+                }else{
+                    $elTextHidden.remove();
+                };
+            };
+        });
+    };
+
+
+    //инициализация
+    $('.pr2').liTextLength({
+        length: 150,                                    //Видимое кол-во символов
+        afterLength: '...',                                //Текст после видимого содержания
+        fullText:true,                                    //Добавить ссылку для отображения скрытого текста
+        moreText: '<br>полный&nbsp;текст',                //Текст ссылки до показа скрытого содержания
+        lessText: '<br>скрыть&nbsp;полный&nbsp;текст'    //Текст ссылки после показа скрытого содержания
+    });
+})

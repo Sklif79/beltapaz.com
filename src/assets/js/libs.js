@@ -3,3 +3,4 @@
 //= libs/jquery.dotdotdot.js
 //= libs/jquery-ui.js
 //= libs/jquery.fancybox.pack.js
+//= libs/jquery.mCustomScrollbar.min.js
