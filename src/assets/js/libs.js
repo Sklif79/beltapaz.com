@@ -4,3 +4,6 @@
 //= libs/jquery-ui.js
 //= libs/jquery.fancybox.pack.js
 //= libs/jquery.mCustomScrollbar.min.js
+//= libs/jquery.ui.touch-punch.js
+//= libs/uikit/uikit.js
+//= libs/jquery.form-validator.min.js

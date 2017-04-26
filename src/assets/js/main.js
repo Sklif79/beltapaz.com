@@ -1,7 +1,12 @@
 $(document).ready(function () {
 
+    validatePopups();
 
+    $('.expo__item-title').setMaxHeights();
 
+    dealersToggle();
+
+    servicesImagesToggle();
 
     asideToggle();
 
@@ -12,6 +17,8 @@ $(document).ready(function () {
     doubleRange();
 
     datapickerLang();
+
+    navigation();
 
     $('a.expo-more-group, a.awards-slider-group, a.awards-slider-group').fancybox({
         closeBtn: true,
@@ -64,7 +71,6 @@ $(document).ready(function () {
     });
 
     $('.slider-partners').slick({
-        // infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
         dots: false,
@@ -73,14 +79,14 @@ $(document).ready(function () {
         arrows: true,
         responsive: [
             {
-                breakpoint: 786,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 4
                 }
             },
 
             {
-                breakpoint: 498,
+                breakpoint: 690,
                 settings: {
                     slidesToShow: 1
                 }
@@ -89,7 +95,6 @@ $(document).ready(function () {
     });
 
     $('.slider-news').slick({
-        // infinite: true,
         slidesToShow: 6,
         slidesToScroll: 1,
         dots: false,
@@ -98,14 +103,14 @@ $(document).ready(function () {
         arrows: true,
         responsive: [
             {
-                breakpoint: 786,
+                breakpoint: 1200,
                 settings: {
                     slidesToShow: 4
                 }
             },
 
             {
-                breakpoint: 498,
+                breakpoint: 690,
                 settings: {
                     slidesToShow: 1
                 }
@@ -120,56 +125,114 @@ $(document).ready(function () {
         dots: false,
         nextArrow: '<div class="expo-more-slider-next"></div>',
         prevArrow: '<div class="expo-more-slider-prev"></div>',
-        arrows: true
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1042,
+                settings: {
+                    slidesToShow: 3
+                }
+            }
+        ]
     });
 
     $('.news-page__slider').slick({
-        // infinite: false,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        dots: false,
-        nextArrow: '<div class="expo-more-slider-next"></div>',
-        prevArrow: '<div class="expo-more-slider-prev"></div>',
-        arrows: true
-    });
-
-    $('.awards-slider, .about-slider').slick({
         // infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
         dots: false,
         nextArrow: '<div class="about-slider-next"></div>',
         prevArrow: '<div class="about-slider-prev"></div>',
-        arrows: true
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 498,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    $('.awards-slider').slick({
+        // infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        nextArrow: '<div class="about-slider-next"></div>',
+        prevArrow: '<div class="about-slider-prev"></div>',
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1042,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    $('.about-slider').slick({
+        // infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        nextArrow: '<div class="about-slider-next"></div>',
+        prevArrow: '<div class="about-slider-prev"></div>',
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 498,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    $('.recommendation').slick({
+        // infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        dots: false,
+        // nextArrow: '<div class="about-slider-next"></div>',
+        // prevArrow: '<div class="about-slider-prev"></div>',
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1042,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+
+            {
+                breakpoint: 701,
+                settings: {
+                    slidesToShow: 1,
+                    nextArrow: '<div class="about-slider-next"></div>',
+                    prevArrow: '<div class="about-slider-prev"></div>',
+                    arrows: true
+                }
+            }
+        ]
     });
 
 
-
-
     //tablet
-    if ( $(window).width() < 730 ) {
+    if ($(window).width() < 730) {
         $("#card-tabs").mCustomScrollbar({
-            axis:"x",
-            advanced:{autoExpandHorizontalScroll:true}
+            axis: "x"
         });
     }
 
 
     //mobile
-    if ( $(window).width() < 498 ) {
-        $('.recommendation').slick({
-            // infinite: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: false,
-            nextArrow: '<div class="about-slider-next"></div>',
-            prevArrow: '<div class="about-slider-prev"></div>',
-            arrows: true
-        });
+    if ($(window).width() < 498) {
 
         $(".product-card__table-wrap").mCustomScrollbar({
-            axis:"x",
-            advanced:{autoExpandHorizontalScroll:true}
+            axis: "x",
+            advanced: {autoExpandHorizontalScroll: true}
         });
     }
 
@@ -202,8 +265,6 @@ function mapFooter() {
                 //iconImageOffset: [-3, -42]
             });
 
-        // myMap.behaviors.disable("scrollZoom");
-
         myMap.geoObjects.add(myPlacemark);
     });
 }
@@ -227,9 +288,8 @@ function doubleRange() {
     $("#range-max").val($("#slider-range").slider("values", 1));
 }
 
-
+//анимация поиска в header
 function searchActive() {
-    // var el = $('input.header-bottom__search-el');
     var el = $('input.header-bottom__search-el');
     var close = $('div.header-bottom__search-close');
     var nav = $('#header-bottom__nav');
@@ -353,7 +413,7 @@ function datapickerLang() {
     }
 }
 
-
+//спойлер фильтра подбора
 function asideToggle() {
     if ($(window).width() < 1041) {
         $('aside.aside').slideUp(0);
@@ -361,83 +421,138 @@ function asideToggle() {
         $('.aside-toggle').removeClass('aside-toggle_border');
 
         $('.aside-toggle').on('click', function () {
-            $('aside.aside').slideToggle();
+            $('aside.aside').slideToggle(500);
             $(this).toggleClass('aside-toggle_border');
             $('.filter-wrap').toggleClass('active');
 
-            if ( $(window).width() < 498 ) {
-                $('.products-nav').slideUp(0);
-                $('.products-nav__wrap').removeClass('active');
+            if ($(window).width() < 701) {
+                $('div.products-nav').slideUp(0);
+                $('div.products-nav__wrap').removeClass('active');
             }
         });
     }
 
-    if ( $(window).width() < 498 ) {
-        $('.products-nav').slideUp(0);
+    if ($(window).width() < 701) {
+        $('div.products-nav').slideUp(0);
+        $('.div.products-nav__wrap').removeClass('active');
 
-        $('.products-nav-toggle').on('click', function () {
-            $('.products-nav').slideToggle();
+        $('div.products-nav-toggle').on('click', function () {
+            $('div.products-nav').slideToggle(500);
             $(this).toggleClass('aside-toggle_border');
-            $('.products-nav__wrap').toggleClass('active');
+            $('div.products-nav__wrap').toggleClass('active');
 
             $('aside.aside').slideUp(0);
-            $('.filter-wrap').removeClass('active');
-            $('.aside-toggle').removeClass('aside-toggle_border');
+            $('div.filter-wrap').removeClass('active');
+            $('div.aside-toggle').removeClass('aside-toggle_border');
         });
     }
-
-
 }
 
 
+//спойлер страницы услуг
+function servicesImagesToggle() {
+    if ($(window).width() < 1041) {
+        $('ul.services-images__list').slideUp(0);
 
+        $('.services-images__info-title').each(function () {
+            if (!$(this).siblings('ul.services-images__list').length) {
+                $(this).addClass('hide_after');
+            }
+        });
 
+        $('.services-images__info-title').on('click', function () {
+            if ($(this).hasClass('active')) {
+                $(this).toggleClass('active').siblings('ul.services-images__list').slideToggle();
+                return false;
+            }
 
+            $('ul.services-images__list').slideUp();
+            $('.services-images__info-title').removeClass('active');
 
+            $(this).toggleClass('active').siblings('ul.services-images__list').slideToggle();
+        })
+    }
+}
 
+//спойлер страницы диллеры
+function dealersToggle() {
+    if ($(window).width() < 1042) {
+        $('div.dealers-mobile__content').slideUp(0);
 
+        $('.dealers-mobile__title').on('click', function () {
+            if ($(this).parent('div.dealers-mobile-el').hasClass('active')) {
+                $(this).siblings('div.dealers-mobile__content').slideToggle();
+                $(this).parent('div.dealers-mobile-el').toggleClass('active');
+                return false;
+            }
 
+            $('div.dealers-mobile__content').slideUp();
+            $('div.dealers-mobile-el').removeClass('active');
+            $(this).siblings('div.dealers-mobile__content').slideToggle();
+            $(this).parent('div.dealers-mobile-el').toggleClass('active');
 
+        })
+    }
+}
 
+function navigation() {
 
+    if ($(window).width() < 1042) {
+        var mobileNav = $('.header-top');
 
+        $('.mobile-nav').on('click', function () {
+            mobileNav.show();
+        });
 
+        $('.mobile-nav__close').on('click', function () {
+            mobileNav.hide();
 
+        });
 
+        $(document).on('click', function (e) {
+            if (
+                !$(e.target).closest(".mobile-nav").length
+                && !$(e.target).closest(".header-top").length
+            ) {
+                mobileNav.hide();
+            }
+        });
+    }
+}
 
-
-
-$(document).ready(function(){
+//плагин обрезки текста
+$(document).ready(function () {
     //плагин
-    jQuery.fn.liTextLength = function(options){
+    jQuery.fn.liTextLength = function (options) {
         // настройки по умолчанию
         var o = jQuery.extend({
             length: 150,                                    //Видимое кол-во символов
             afterLength: '...',                                //Текст после видимого содержания
-            fullText:true,                                    //Добавить ссылку для отображения скрытого текста
+            fullText: true,                                    //Добавить ссылку для отображения скрытого текста
             moreText: '<br>полный&nbsp;текст',                //Текст ссылки до показа скрытого содержания
             lessText: '<br>скрыть&nbsp;полный&nbsp;текст'    //Текст ссылки после показа скрытого содержания
-        },options);
-        return this.each(function(){
+        }, options);
+        return this.each(function () {
             var
                 $el = $(this),
                 elText = $.trim($el.text()),
                 elLength = elText.length;
-            if(elLength > o.length){
+            if (elLength > o.length) {
                 var
-                    textSlice = $.trim(elText.substr(0,o.length)),
+                    textSlice = $.trim(elText.substr(0, o.length)),
                     textSliced = $.trim(elText.substr(o.length));
-                if(textSlice.length < o.length){
+                if (textSlice.length < o.length) {
                     var
                         textVisible = textSlice,
                         textHidden = $.trim(elText.substr(o.length));
-                }else{
+                } else {
                     var
                         arrSlice = textSlice.split(' '),
                         popped = arrSlice.pop(),
                         textVisible = arrSlice.join(' ') + ' ',
-                        textHidden = popped + textSliced  + ' ';
-                };
+                        textHidden = popped + textSliced + ' ';
+                }
+                ;
                 var
                     $elTextHidden = $('<span>').addClass('elTextHidden').html(textHidden),
                     $afterLength = $('<span>').addClass('afterLength').html(o.afterLength + ' '),
@@ -445,34 +560,101 @@ $(document).ready(function(){
                 $el.text(textVisible).append($afterLength).append($elTextHidden);
                 var displayStyle = $elTextHidden.css('display');
                 $elTextHidden.hide();
-                if(o.fullText){
+                if (o.fullText) {
                     $el.append($more);
-                    $more.click(function(){
-                        if($elTextHidden.is(':hidden')){
-                            $elTextHidden.css({display:displayStyle})    ;
+                    $more.click(function () {
+                        if ($elTextHidden.is(':hidden')) {
+                            $elTextHidden.css({display: displayStyle});
                             $more.html(o.lessText);
                             $afterLength.hide();
-                        }else{
+                        } else {
                             $elTextHidden.hide();
                             $more.html(o.moreText);
                             $afterLength.show();
-                        };
+                        }
+                        ;
                         return false;
                     });
-                }else{
+                } else {
                     $elTextHidden.remove();
-                };
-            };
+                }
+                ;
+            }
+            ;
         });
     };
 
+    if ($(window).width() < 497) {
+        //инициализация
+        $('#tab-description').liTextLength({
+            length: 597,                                    //Видимое кол-во символов
+            afterLength: '...',                                //Текст после видимого содержания
+            fullText: true,                                    //Добавить ссылку для отображения скрытого текста
+            moreText: '<div class="description-more"><span>Подробнее</span></div>',                //Текст ссылки до показа скрытого содержания
+            lessText: '<div class="description-more"><span>Свернуть</span></div>'    //Текст ссылки после показа скрытого содержания
+        });
+    }
 
-    //инициализация
-    $('.pr2').liTextLength({
-        length: 150,                                    //Видимое кол-во символов
-        afterLength: '...',                                //Текст после видимого содержания
-        fullText:true,                                    //Добавить ссылку для отображения скрытого текста
-        moreText: '<br>полный&nbsp;текст',                //Текст ссылки до показа скрытого содержания
-        lessText: '<br>скрыть&nbsp;полный&nbsp;текст'    //Текст ссылки после показа скрытого содержания
+});
+
+
+$.fn.setMaxHeights = function () {
+    var maxHeight = this.map(function (i, e) {
+        return $(e).height();
+    }).get();
+
+    return this.height(Math.max.apply(this, maxHeight));
+};
+
+//валидатор формы попап
+function validatePopups() {
+    var myLanguage = {
+        errorTitle: "Ошибка отправки формы!",
+        requiredField: "Это обязательное поле",
+        requiredFields: "Вы задали не все обязательные поля",
+        badTime: "Вы задали некорректное время",
+        badEmail: "Вы задали некорректный e-mail",
+        badTelephone: "Вы задали некорректный номер телефона",
+        badSecurityAnswer: "Вы задали некорректный ответ на секретный вопрос",
+        badDate: "Вы задали некорректную дату",
+        lengthBadStart: "Значение должно быть в диапазоне",
+        lengthBadEnd: " символов",
+        lengthTooLongStart: "Значение длинее, чем ",
+        lengthTooShortStart: "Значение меньше, чем ",
+        notConfirmed: "Введённые значения не могут быть подтверждены",
+        badDomain: "Некорректное значение домена",
+        badUrl: "Некорретный URL",
+        badCustomVal: "Введённое значение неверно",
+        andSpaces: " и пробелы ",
+        badInt: "Значение - не число",
+        badSecurityNumber: "Введённый защитный номер - неправильный",
+        badUKVatAnswer: "Некорректный UK VAT номер",
+        badStrength: "Пароль не достаточно надёжен",
+        badNumberOfSelectedOptionsStart: "Вы должны выбрать как минимум ",
+        badNumberOfSelectedOptionsEnd: " ответов",
+        badAlphaNumeric: "Значение должно содержать только числа и буквы ",
+        badAlphaNumericExtra: " и ",
+        wrongFileSize: "Загружаемый файл слишком велик (максимальный размер %s)",
+        wrongFileType: "Принимаются файлы следующих типов %s",
+        groupCheckedRangeStart: "Выберите между ",
+        groupCheckedTooFewStart: "Выберите как минимум ",
+        groupCheckedTooManyStart: "Выберите максимум из ",
+        groupCheckedEnd: " элемент(ов)",
+        badCreditCard: "Номер кредитной карты некорректен",
+        badCVV: "CVV номер некорректно",
+        wrongFileDim: "Неверные размеры графического файла,",
+        imageTooTall: "изображение не может быть уже чем",
+        imageTooWide: "изображение не может быть шире чем",
+        imageTooSmall: "изображение слишком мало",
+        min: "минимум",
+        max: "максимум",
+        imageRatioNotAccepted: "Изображение с таким соотношением сторон не принимается",
+        badBrazilTelephoneAnswer: "Введённый номер телефона неправильный",
+        badBrazilCEPAnswer: "CEP неправильный",
+        badBrazilCPFAnswer: "CPF неправильный"
+    };
+
+    $.validate({
+        language: myLanguage
     });
-})
+}

@@ -69,7 +69,7 @@
         </div>
 
         <div class="header-bottom">
-            <div class="basic_width clearfix_">
+            <div class="basic_width clearfix_ mobile-nav-flex">
                 <a href="" class="header-bottom__logo"><img src="assets/images/logo.png" alt=""></a>
                 <nav class="header-bottom__nav" id="header-bottom__nav">
                     <ul class="header-bottom__nav-links">
@@ -83,6 +83,7 @@
                     <input class="header-bottom__search-btn" type="submit" value="">
                     <div class="header-bottom__search-close">Закрыть</div>
                 </form>
+                <div class="mobile-nav"></div>
             </div>
         </div>
 
@@ -209,6 +210,64 @@
     </table>
 
 
+    <div class="dealers-mobile dealers-contact">
+
+        <!---->
+        <div class="dealers-mobile-el">
+            <div class="dealers-mobile__title">
+                Директор
+            </div>
+
+            <div class="dealers-mobile__content">
+                <div class="surname">Мартыненко Александр Михайлович</div>
+                <div>(+375 152) 43-99-23</div>
+            </div>
+        </div>
+
+
+        <!---->
+        <div class="dealers-mobile-el">
+            <div class="dealers-mobile__title">
+                Приемная заведующей канцелярией
+            </div>
+
+            <div class="dealers-mobile__content">
+                <div class="surname">Гедройть Чеслава Чеславовна</div>
+                    <div>(+375 152) 43-99-23</div>
+                    <div>факс (+375 152) 43-90-82</div>
+                    <div>факс (+375 152) 43-90-39</div>
+                    <div>е-mail:beltapazplant@yandex.ru,</div>
+                    <div>beltapaz@beltapaz.grodno.by</div>
+            </div>
+        </div>
+
+        <!---->
+        <div class="dealers-mobile-el">
+            <div class="dealers-mobile__title">
+                Главный инженер
+            </div>
+
+            <div class="dealers-mobile__content">
+                <div class="surname">Макарчиков Владимир Фёдорович</div>
+                <div>(+375 152) 43-99-23</div>
+            </div>
+        </div>
+
+        <!---->
+        <div class="dealers-mobile-el">
+            <div class="dealers-mobile__title">
+                Зам. директора по коммерческой деятельности
+            </div>
+
+            <div class="dealers-mobile__content">
+                <div class="surname">Пасвистелик Юрий Константинович</div>
+                <div>(+375 152) 43-89-16</div>
+            </div>
+        </div>
+
+    </div><!--dealers-mobile-->
+
+
 </div>
 
 
@@ -241,7 +300,7 @@
 
 <!-- footer -->
 <footer class="footer">
-    <div class="basic_width footer-top clearfix_">
+    <div class="basic_width footer-top">
         <!--<div class="footer-top clearfix_">-->
         <div class="footer-top__logo">
             <a href=""><img src="assets/images/logo.png" alt=""></a>
@@ -350,19 +409,38 @@
         </ul>
         <div id="tab-person">
             <form action="" method="post" name="person-order" class="popup-form">
-                <input type="text" placeholder="Имя*">
-                <input type="text" placeholder="Номер телефона*">
-                <input type="text" placeholder="Электронная почта*">
+                <label>
+                    <input type="text" placeholder="Имя*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Номер телефона*"
+                           data-validation="required" >
+                </label>
+                <label>
+                    <input type="email" placeholder="Электронная почта*" data-validation="email">
+                </label>
 
                 <button type="submit" class="send-order__btn">Отправить заявку</button>
             </form>
         </div>
         <div id="tab-legal-entity">
             <form action="" method="post" name="legal-entity-order" class="popup-form">
-                <input type="text" placeholder="Имя*">
-                <input type="text" placeholder="Номер телефона*">
-                <input type="text" placeholder="Название компании*">
-                <input type="text" placeholder="Сайт компании">
+                <label>
+                    <input type="text" placeholder="Имя*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Номер телефона*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Название компании*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Сайт компании">
+                </label>
 
                 <button type="submit" class="send-order__btn">Отправить заявку</button>
             </form>

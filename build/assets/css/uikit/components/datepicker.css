@@ -14,8 +14,11 @@
   /* 2 */
   width: auto;
   /* 3 */
+  -webkit-animation: uk-fade 0.2s ease-in-out;
   animation: uk-fade 0.2s ease-in-out;
   /* 4 */
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
   transform-origin: 0 0;
 }
 /* Sub-object: `uk-datepicker-nav`

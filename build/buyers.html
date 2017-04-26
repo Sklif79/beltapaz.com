@@ -69,7 +69,7 @@
         </div>
 
         <div class="header-bottom">
-            <div class="basic_width clearfix_">
+            <div class="basic_width clearfix_ mobile-nav-flex">
                 <a href="" class="header-bottom__logo"><img src="assets/images/logo.png" alt=""></a>
                 <nav class="header-bottom__nav" id="header-bottom__nav">
                     <ul class="header-bottom__nav-links">
@@ -83,6 +83,7 @@
                     <input class="header-bottom__search-btn" type="submit" value="">
                     <div class="header-bottom__search-close">Закрыть</div>
                 </form>
+                <div class="mobile-nav"></div>
             </div>
         </div>
 
@@ -108,8 +109,9 @@
     <div class="buyers">
 
         <div class="questions">
-
-            <h2 class="buyers-title">Часто задаваемые вопросы</h2>
+            <div class="buyers-title-wrap">
+                <h2 class="buyers-title">Часто задаваемые вопросы</h2>
+            </div>
 
             <!---->
             <div class="question-item">
@@ -298,7 +300,9 @@
 
         <div class="buyers-info">
             <div class="docs">
-                <h2 class="buyers-title">Документы</h2>
+                <div class="buyers-title-wrap">
+                    <h2 class="buyers-title">Документы</h2>
+                </div>
 
                 <div class="doc-items">
                     <div class="docs-item">
@@ -311,17 +315,21 @@
             </div>
 
             <div class="technical-catalogue">
-                <h2 class="buyers-title">Технический каталог</h2>
+                <div class="buyers-title-wrap">
+                    <h2 class="buyers-title">Технический каталог</h2>
+                </div>
 
                 <img src="assets/images/faq-catalog.png" alt="">
-
+            <div class="technical-catalogue-wrap-link">
                 <a href="" class="link_orange" download><span>Перейти в каталог</span></a>
+            </div>
 
-                <a href=""></a>
             </div>
 
             <div class="petitions">
-                <h2 class="buyers-title">Для обращений</h2>
+                <div class="buyers-title-wrap">
+                    <h2 class="buyers-title">Для обращений</h2>
+                </div>
 
                 <div class="petition-inner">
                     <p>
@@ -383,7 +391,7 @@
 
 <!-- footer -->
 <footer class="footer">
-    <div class="basic_width footer-top clearfix_">
+    <div class="basic_width footer-top">
         <!--<div class="footer-top clearfix_">-->
         <div class="footer-top__logo">
             <a href=""><img src="assets/images/logo.png" alt=""></a>
@@ -492,19 +500,38 @@
         </ul>
         <div id="tab-person">
             <form action="" method="post" name="person-order" class="popup-form">
-                <input type="text" placeholder="Имя*">
-                <input type="text" placeholder="Номер телефона*">
-                <input type="text" placeholder="Электронная почта*">
+                <label>
+                    <input type="text" placeholder="Имя*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Номер телефона*"
+                           data-validation="required" >
+                </label>
+                <label>
+                    <input type="email" placeholder="Электронная почта*" data-validation="email">
+                </label>
 
                 <button type="submit" class="send-order__btn">Отправить заявку</button>
             </form>
         </div>
         <div id="tab-legal-entity">
             <form action="" method="post" name="legal-entity-order" class="popup-form">
-                <input type="text" placeholder="Имя*">
-                <input type="text" placeholder="Номер телефона*">
-                <input type="text" placeholder="Название компании*">
-                <input type="text" placeholder="Сайт компании">
+                <label>
+                    <input type="text" placeholder="Имя*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Номер телефона*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Название компании*"
+                           data-validation="required">
+                </label>
+                <label>
+                    <input type="text" placeholder="Сайт компании">
+                </label>
 
                 <button type="submit" class="send-order__btn">Отправить заявку</button>
             </form>

@@ -79,7 +79,7 @@ gulp.task('js:build', function () {
 gulp.task('style:build', function () {
     gulp.src(path.src.style)
         .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browsers: ['last 6 versions'],
             cascade: false
         }))
         .pipe(gulp.dest(path.build.css))
